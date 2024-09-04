@@ -1,16 +1,34 @@
 pipeline {
     agent any
     stages {
-        stage("Say Hello"){
-            steps {
-                echo "This is stage Say Hello"
-            }
+       stage("Create docker repository"){
+        steps {
+            echo "aws create-repository --name notifications_api || true "
         }
+       }
 
-        stage("Stage Build Docker image"){
-            steps {
-                echo "docker build -t bludive:v2 ."
-            }
+       stage("Build docker image"){
+        steps {
+            sh "docker build -t notifications_api:v1 ."
         }
+       }
+
+       stage("Docker image scan"){
+        steps {
+            echo "synk notifications_api:v1 --policies 'novulno' "
+        }
+       }
+
+      stage("Push image to registry"){
+        steps {
+            echo "docker push bludive/notifications_api:v1"
+        }
+      } 
+
+     stage("deploy"){
+        steps {
+            echo "kubectl apply -f deploy.yaml"
+        }
+     }   
     }
 }
