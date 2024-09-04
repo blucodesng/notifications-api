@@ -9,7 +9,7 @@ pipeline {
 
        stage("Build docker image"){
         steps {
-            sh "docker build -t notifications_api:v1 ."
+            sh "docker build -t notifications_api:latest ."
         }
        }
 
@@ -27,7 +27,7 @@ pipeline {
 
      stage("deploy"){
         steps {
-            echo "kubectl apply -f deploy.yaml"
+            echo "kubectl apply -f deploy"
         }
      }   
     }

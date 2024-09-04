@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notifications-api-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: notifications-api
+  template:
+    metadata:
+      labels:
+        app: notifications-api
+    spec:
+      containers:
+      - name: notifications-api-container
+        image: notifications_api:latest
+        ports:
+        - containerPort: 9100
