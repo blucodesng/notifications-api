@@ -21,7 +21,7 @@ pipeline {
 
       stage("Push image to registry"){
         steps {
-            sh "docker push devqxy/notifications_api:latest"
+            echo "docker push devqxy/notifications_api:latest"
         }
       } 
 
