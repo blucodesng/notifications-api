@@ -9,7 +9,7 @@ pipeline {
 
        stage("Build docker image"){
         steps {
-            sh "docker build -t devqxz/notifications_api:latest ."
+            sh "docker build -t devqxy/notifications_api:latest ."
         }
        }
 
@@ -21,7 +21,7 @@ pipeline {
 
       stage("Push image to registry"){
         steps {
-            sh "docker push devqxz/notifications_api:latest"
+            sh "docker push devqxy/notifications_api:latest"
         }
       } 
 
