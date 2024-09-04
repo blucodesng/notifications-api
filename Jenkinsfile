@@ -27,7 +27,7 @@ pipeline {
 
      stage("deploy"){
         steps {
-            echo "kubectl apply -f deploy"
+            sh "kubectl apply -f deploy"
         }
      }   
     }
