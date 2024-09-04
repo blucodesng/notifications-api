@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: notifications-api-container
-        image: devqxy/notifications_api:latest
+        image: notifications_api:latest
         ports:
         - containerPort: 9100
