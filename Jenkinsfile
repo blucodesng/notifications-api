@@ -27,6 +27,7 @@ pipeline {
 
      stage("deploy"){
         steps {
+            sh "eval $(minikube docker-env)"
             sh "kubectl apply -f deploy"
         }
      }   
