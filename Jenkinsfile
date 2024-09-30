@@ -36,7 +36,7 @@ pipeline {
 
      stage("deploy"){
         steps {
-            sh "kubectl get ns"
+            sh "kubectl apply -f deploy"
         }
      }   
     }
