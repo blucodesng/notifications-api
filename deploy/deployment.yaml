@@ -19,4 +19,4 @@ spec:
         ports:
         - containerPort: 9100
       imagePullSecrets:
-        name: imagepullsecret
+        - name: imagepullsecret
