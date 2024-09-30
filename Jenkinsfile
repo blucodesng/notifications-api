@@ -13,6 +13,7 @@ pipeline {
             sh "export DOCKER_HOST=tcp://192.168.49.2:2376"
             sh "export DOCKER_CERT_PATH=/home/kuber/.minikube/certs"
             sh "export MINIKUBE_ACTIVE_DOCKERD=minikube"
+            sh "echo all0wm3n0t | docker login --username devqxz@gmail.com --password-stdin "
             sh "docker build -t devxy/notifications_api:v2 ."
         }
        }
