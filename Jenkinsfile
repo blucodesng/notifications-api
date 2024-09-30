@@ -3,8 +3,6 @@ pipeline {
     stages {
        stage("Create docker repository"){
         steps {
-            echo "$HOME"
-            sh "whoami"
             echo "aws create-repository --name notifications_api || true "
         }
        }
