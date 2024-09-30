@@ -18,3 +18,5 @@ spec:
         image: devxy/notifications_api:v3
         ports:
         - containerPort: 9100
+      imagePullSecrets:
+        name: imagepullsecret
