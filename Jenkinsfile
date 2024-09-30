@@ -36,6 +36,7 @@ pipeline {
 
      stage("deploy"){
         steps {
+            sh "kubectl delete -f deploy"
             sh "kubectl apply -f deploy"
         }
      }   
