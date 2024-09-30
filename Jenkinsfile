@@ -13,7 +13,7 @@ pipeline {
             sh "export DOCKER_HOST=tcp://192.168.49.2:2376"
             sh "export DOCKER_CERT_PATH=/home/kuber/.minikube/certs"
             sh "export MINIKUBE_ACTIVE_DOCKERD=minikube"
-            sh "docker build -t notifications_api:v2 ."
+            sh "docker build -t devxy/notifications_api:v2 ."
         }
        }
 
@@ -29,7 +29,7 @@ pipeline {
             sh "export DOCKER_HOST=tcp://192.168.49.2:2376"
             sh "export DOCKER_CERT_PATH=/home/kuber/.minikube/certs"
             sh "export MINIKUBE_ACTIVE_DOCKERD=minikube"
-            sh "docker push notifications_api:v1"
+            sh "docker push devxy/notifications_api:v2"
         }
       } 
 
