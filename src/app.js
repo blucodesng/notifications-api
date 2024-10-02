@@ -18,6 +18,7 @@ app.get("/healthz", function(req, res){
     })
 });
 
+
 app.listen(port, function(){
     console.log(`App is running at http://localhost:${port} `)
 })
