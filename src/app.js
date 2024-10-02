@@ -10,6 +10,14 @@ app.get("/", function(req, res){
     })
 });
 
+app.get("/healthz", function(req, res){
+    res.json({
+        message: "The app is running smoothly"
+        healthy: true,
+        date: new Date()
+    })
+});
+
 app.listen(port, function(){
     console.log(`App is running at http://localhost:${port} `)
 })
