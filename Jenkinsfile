@@ -15,7 +15,7 @@ pipeline {
             sh "export MINIKUBE_ACTIVE_DOCKERD=minikube"
             sh "cat regpwd.txt | docker login --username devqxz@gmail.com --password-stdin "
             sh "docker build -t devxy/notifications_api:$BUILD_NUMBER ."
-            sh "docker devxy/notifications_api:$BUILD_NUMBER devxy/notifications_api:latest "
+            sh "docker -t devxy/notifications_api:$BUILD_NUMBER devxy/notifications_api:latest "
         }
        }
 
