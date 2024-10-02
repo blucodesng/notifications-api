@@ -12,7 +12,7 @@ app.get("/", function(req, res){
 
 app.get("/healthz", function(req, res){
     res.json({
-        message: "The app is running smoothly"
+        message: "The app is running smoothly",
         healthy: true,
         date: new Date()
     })
