@@ -14,7 +14,7 @@ pipeline {
             sh "export DOCKER_CERT_PATH=/home/kuber/.minikube/certs"
             sh "export MINIKUBE_ACTIVE_DOCKERD=minikube"
             sh "cat regpwd.txt | docker login --username devqxz@gmail.com --password-stdin "
-            sh "docker build -t devxy/notifications_api:v3 ."
+            sh "docker build -t devxy/notifications_api:$BUILD_NUMBER ."
         }
        }
 
@@ -30,7 +30,7 @@ pipeline {
             sh "export DOCKER_HOST=tcp://192.168.49.2:2376"
             sh "export DOCKER_CERT_PATH=/home/kuber/.minikube/certs"
             sh "export MINIKUBE_ACTIVE_DOCKERD=minikube"
-            sh "docker push devxy/notifications_api:v3"
+            sh "docker push devxy/notifications_api:$BUILD_NUMBER"
         }
       } 
 
