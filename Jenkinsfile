@@ -14,8 +14,8 @@ pipeline {
             sh "export DOCKER_CERT_PATH=/home/kuber/.minikube/certs"
             sh "export MINIKUBE_ACTIVE_DOCKERD=minikube"
             sh "cat regpwd.txt | docker login --username devqxz@gmail.com --password-stdin "
-            sh "docker build -t devxy/notifications_api:$BUILD_NUMBER ."
-            sh "docker tag devxy/notifications_api:$BUILD_NUMBER devxy/notifications_api:latest "
+            echo "docker build -t devxy/notifications_api:$BUILD_NUMBER ."
+            echo "docker tag devxy/notifications_api:$BUILD_NUMBER devxy/notifications_api:latest "
         }
        }
 
@@ -31,15 +31,15 @@ pipeline {
             sh "export DOCKER_HOST=tcp://192.168.49.2:2376"
             sh "export DOCKER_CERT_PATH=/home/kuber/.minikube/certs"
             sh "export MINIKUBE_ACTIVE_DOCKERD=minikube"
-            sh "docker push devxy/notifications_api:$BUILD_NUMBER"
-            sh "docker push devxy/notifications_api:latest"
+            echo "docker push devxy/notifications_api:$BUILD_NUMBER"
+            echo "docker push devxy/notifications_api:latest"
         }
       } 
 
      stage("deploy"){
         steps {
-            sh "kubectl delete -f deploy || true "
-            sh "kubectl apply -f deploy"
+            echo "kubectl delete -f deploy || true "
+            echo "kubectl apply -f deploy"
         }
      }   
     }
