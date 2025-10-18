@@ -5,7 +5,9 @@ pipeline {
         steps {
             sh "cat regpwd.txt | docker login --username devqxz@gmail.com --password-stdin "
             sh "docker build -t devxy/notifications_api:$BUILD_NUMBER ."
-            sh "docker tag devxy/notifications_api:$BUILD_NUMBER devxy/notifications_api:latest "
+            sh "docker tag devxy/notifications_api:$BUILD_NUMBER devxy/notifications_api:latest"
+            sh "docker push devxy/notifications_api:$BUILD_NUMBER"
+            sh "docker push devxy/notifications_api:latest"
         }
        }
 
@@ -17,5 +19,6 @@ pipeline {
      }   
     }
 }
+
 
 
