@@ -13,12 +13,13 @@ pipeline {
 
      stage("deploy"){
         steps {
-            echo "kubectl delete -f deploy || true "
-            echo "kubectl apply -f deploy"
+            sh "kubectl delete -f deploy || true "
+            sh "kubectl apply -f deploy"
         }
      }   
     }
 }
+
 
 
 
